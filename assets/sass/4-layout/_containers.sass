@@ -1,0 +1,24 @@
+@charset "UTF-8"
+
+.container
+	display: flex
+	width: 80%
+	margin: 0 auto
+	min-height: 700px
+	+set-background($back)
+
+.container-left
+	flex: 1 1
+	border-right: 1px solid $ignore
+	height: 100%
+
+.container-main
+	flex: 2 1
+
+.container-right
+	flex: 1 1
+	border-left: 1px solid $ignore
+
+/* inner classes */
+.container-inner
+	margin: 1rem
