@@ -1,0 +1,13 @@
+{
+  "name": "tea",
+  "version": "1.0.0",
+  "description": "tea pages",
+  "main": "index.js",
+  "repository": "https://github.com/Shivabeach/tea.git",
+  "author": "Shivabeach <mrwilson1@comcast.net>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
+}
