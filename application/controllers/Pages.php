@@ -6,8 +6,6 @@ class Pages extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model("pages_model");
-
 		if($query = $this->pages_model->get_black()) {
 			$data['black'] = $query;
 		}
@@ -35,6 +33,18 @@ class Pages extends CI_Controller {
 		$data['main_content'] = "pages/prime";
 		$this->load->view("template/template", $data);
 	}
+
+	public function display ()
+	{
+		$name = $this->uri->segment(3);
+		$this->db->where('teaName', $name);
+		$this->db->select('teaName, teaType, comment,rating,lastPurchase,orderedQty, total');
+		$data['name'] = $this->db->select('teaName');
+		$query = $this->db->get('tea');
+		$data['single'] = $query->result();
+
+	}
+
 
 }
 

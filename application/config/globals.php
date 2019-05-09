@@ -1,8 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['green']  = "Green Tea";
+$config['typeg']  = "Green Tea ";
+$config['typed']   = "Dark Tea";
+$config['typey'] = "Yellow Tea";
+$config['typew']  = "White Tea";
+$config['typeb']  = "Black Tea";
 $config['ool']    = "Oolong Tea";
-$config['dark']   = "Dark Tea";
-$config['yellow'] = "Yellow Tea";
-$config['white']  = "White Tea";
-$config['black']  = "Black Tea";
+$config['name'] = "VanHorn";

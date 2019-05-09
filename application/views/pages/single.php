@@ -32,24 +32,20 @@
   <div class="container-main">
     <div class="container-inner">
       <p class="inner-center-text">
-
 				This is my record of purchased and sample tea's that I have recieved mostly from Zhen tea in Canada.
 			</p>
-			<p class="inner-center-text">
-				The center column is for purchased tea. The column on the right side is for sample teas sent with purchases
-			</p>
 
-      <div class="main-title fs-5"><?=$ool;?></div>
+      <div class="main-title fs-5"><?=$name;?></div>
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
+					$this->table->set_heading('ID', 'Last Bought', 'orderedQty', 'total', 'Rating', 'comment');
 					foreach($oolong as $row){
 						$this->table->add_row(
-							$row->id,
-							$row->teaName,
 							$row->lastPurchase,
-							$row->rating);
+							$row->rating,
+							$row->comment
+						);
 					}
 					echo $this->table->generate();
 
@@ -57,85 +53,11 @@
         </table>
       </section>
     </div>
-
-    <div class="container-inner">
-      <div class="main-title fs-5"><?=$typeb;?></div>
-      <section class="tea-display">
-
-        <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
-					foreach($black as $row){
-						$this->table->add_row(
-							$row->id,
-							$row->teaName,
-							$row->lastPurchase,
-							$row->rating);
-					}
-					echo $this->table->generate();
-
-				?>
-        </table>
-      </section>
-    </div>
-
-    <div class="container-inner">
-      <div class="main-title fs-5"><?=$typey;?></div>
-      <section class="tea-display">
-
-        <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
-					foreach($yellow as $row){
-						$this->table->add_row(
-							$row->id,
-							$row->teaName,
-							$row->lastPurchase,
-							$row->rating);
-					}
-					echo $this->table->generate();
-
-				?>
-        </table>
-      </section>
-    </div>
-
-    <div class="container-inner">
-      <div class="main-title fs-5"><?=$typeg;?></div>
-      <section class="tea-display">
-
-        <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
-					foreach($green as $row){
-						$this->table->add_row(
-							$row->id,
-							$row->teaName,
-							$row->lastPurchase,
-							$row->rating);
-					}
-					echo $this->table->generate();
-
-				?>
-        </table>
-      </section>
-    </div>
-
   </div>
   <div class="container-right">
     <div class="container-inner">
       <div class="main-title fs-5">Sample Teas</div>
-      <section class="tea-display">
 
-        <?php
-				$this->table->set_heading('Tea Name', 'Type', 'Buy Again');
-				foreach($sample as $row){
-					$this->table->add_row(
-						$row->teaName,
-						$row->teaType,
-						$row->buyAgain);
-				}
-				echo $this->table->generate();
-
-			?>
-      </section>
     </div>
   </div>
 
