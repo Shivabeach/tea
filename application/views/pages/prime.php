@@ -6,28 +6,27 @@
   <div class="container-left">
     <div class="container-inner">
       <div class="fs-5">Tea Links</div>
-      <menu class="shopping-menu">
-        <ul class="shopping-list">
-          <li> <a rel="external" href="https://zhentea.ca">Zhen Tea</a> </li>
-          <li> <a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=black-tea&really_curr_tax=28-product_cat">Black
-              Tea</a> </li>
-          <li><a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=oolong-tea&really_curr_tax=28-product_cat">Oolong
-              Tea</a></li>
-          <li><a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=green-tea&really_curr_tax=28-product_cat">Green
-              Tea</a></li>
-        </ul>
-      </menu>
-      <div class="fs-5">Site Links</div>
-      <menu class="shopping-menu">
-        <ul class="shopping-list">
-          <li><a href="/">Home</a></li>
-          <li><a rel="external" href="http://version31/pages/todo">ToDo</a></li>
-        </ul>
-      </menu>
+			<?php include 'menu.html';?>
     </div>
+		<div class="container-inner">
+			<?php
+				$arg = [
+					"id" => "ajax69"
+				];
+				echo
+				form_open('pages/singles', $arg);
+				$arg1 = [
+					"id" => "teaname",
+					"name" => "single"
+				];
+				echo form_input($arg1);
+				echo form_submit('submit', 'Submit'),nbs(4), form_reset("reset", "Reset");
+
+				echo form_close();
+
+
+			?>
+		</div>
   </div>
   <div class="container-main">
     <div class="container-inner">
@@ -43,11 +42,12 @@
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
+					$this->table->set_heading('Tea Name', 'Last Bought', 'Rating');
+
 					foreach($oolong as $row){
+						$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
 						$this->table->add_row(
-							$row->id,
-							$row->teaName,
+							$cell1,
 							$row->lastPurchase,
 							$row->rating);
 					}
@@ -63,11 +63,11 @@
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
+					$this->table->set_heading('Tea Name', 'Last Bought', 'Rating');
 					foreach($black as $row){
+						$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
 						$this->table->add_row(
-							$row->id,
-							$row->teaName,
+							$cell1,
 							$row->lastPurchase,
 							$row->rating);
 					}
@@ -83,11 +83,11 @@
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
+					$this->table->set_heading('Tea Name', 'Last Bought', 'Rating');
 					foreach($yellow as $row){
+						$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
 						$this->table->add_row(
-							$row->id,
-							$row->teaName,
+							$cell1,
 							$row->lastPurchase,
 							$row->rating);
 					}
@@ -103,11 +103,11 @@
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Tea Name', 'Last Bought', 'Rating');
+					$this->table->set_heading('Tea Name', 'Last Bought', 'Rating');
 					foreach($green as $row){
+						$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
 						$this->table->add_row(
-							$row->id,
-							$row->teaName,
+							$cell1,
 							$row->lastPurchase,
 							$row->rating);
 					}
@@ -127,8 +127,9 @@
         <?php
 				$this->table->set_heading('Tea Name', 'Type', 'Buy Again');
 				foreach($sample as $row){
+					$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
 					$this->table->add_row(
-						$row->teaName,
+						$cell1,
 						$row->teaType,
 						$row->buyAgain);
 				}

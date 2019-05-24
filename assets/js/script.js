@@ -26,9 +26,17 @@ $(function() {
       data: data,
       success: function(response) {
         $('#display').html(response).delay(4000).fadeOut(1000);
-        location.reload();
       }
     });
     return false;
+  });
+});
+
+$(function () {
+  "use strict";
+  $('td.teaname').on('click', function () { //click on the li
+    var content = $(this).text();//content is the text that you clicked on
+ //PLACE THE TEXT INSIDE THE INPUT FIELD, YOU CAN CHANGE YOUR SELECTOR TO TARGET THE RIGHT INPUT
+    $('input[id="teaname"]').val(content);
   });
 });

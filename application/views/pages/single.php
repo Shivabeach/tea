@@ -6,27 +6,7 @@
   <div class="container-left">
     <div class="container-inner">
       <div class="fs-5">Tea Links</div>
-      <menu class="shopping-menu">
-        <ul class="shopping-list">
-          <li> <a rel="external" href="https://zhentea.ca">Zhen Tea</a> </li>
-          <li> <a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=black-tea&really_curr_tax=28-product_cat">Black
-              Tea</a> </li>
-          <li><a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=oolong-tea&really_curr_tax=28-product_cat">Oolong
-              Tea</a></li>
-          <li><a rel="external"
-              href="https://www.zhentea.ca/shop/chinese-tea/?swoof=1&product_cat=green-tea&really_curr_tax=28-product_cat">Green
-              Tea</a></li>
-        </ul>
-      </menu>
-      <div class="fs-5">Site Links</div>
-      <menu class="shopping-menu">
-        <ul class="shopping-list">
-          <li><a href="/">Home</a></li>
-          <li><a rel="external" href="http://version31/pages/todo">ToDo</a></li>
-        </ul>
-      </menu>
+      <?php include 'menu.html';?>
     </div>
   </div>
   <div class="container-main">
@@ -35,20 +15,20 @@
 				This is my record of purchased and sample tea's that I have recieved mostly from Zhen tea in Canada.
 			</p>
 
-      <div class="main-title fs-5"><?=$name;?></div>
+      <div class="main-title fs-5">Tea</div>
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('ID', 'Last Bought', 'orderedQty', 'total', 'Rating', 'comment');
-					foreach($oolong as $row){
+					$this->table->set_heading('Last Bought', 'orderedQty', 'total', 'Rating');
+					foreach($mingle as $row){
 						$this->table->add_row(
 							$row->lastPurchase,
-							$row->rating,
-							$row->comment
+							$row->orderedQty,
+							$row->total,
+							$row->rating
 						);
 					}
 					echo $this->table->generate();
-
 				?>
         </table>
       </section>
@@ -56,11 +36,19 @@
   </div>
   <div class="container-right">
     <div class="container-inner">
-      <div class="main-title fs-5">Sample Teas</div>
+      <div class="main-title fs-5">Details</div>
+
+			<?php
+			foreach($mustang as $row) {
+      echo auto_typography($row->teaName);
+			echo auto_typography($row->teaType);
+			echo auto_typography($row->comment);
+      }
+      ?>
 
     </div>
   </div>
-
+        <!-- use if(isset($variable)) -->
 </div>
 <footer>
   <div class="card1">

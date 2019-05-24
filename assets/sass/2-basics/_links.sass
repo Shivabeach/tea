@@ -1,14 +1,16 @@
 @charset "UTF-8"
 
 a
+	transition: all .5s
   color: $armadillo
   font-family: arial
   font-size: 1.2rem
 
-  &:visited
-    color: $pantone2019
+a:visited
+	color: $pantone2019
+	text-decoration-line: overline
+	text-decoration-color: red
 
-  &:hover
-    color: $antique-brass
-		animation-duration: $base-duration
-		animation-timing-function: $base-timing
+a:hover
+	color: $antique-brass
+
