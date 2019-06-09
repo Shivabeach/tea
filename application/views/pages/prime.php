@@ -45,7 +45,7 @@
 					$this->table->set_heading('Tea Name', 'Last Bought', 'Rating');
 
 					foreach($oolong as $row){
-						$cell1 = ['data' => $row->teaName, 'class' => 'teaname'];
+						$cell1 = ['data' => $row->teaName, 'class' => 'teaname animated rubberBand'];
 						$this->table->add_row(
 							$cell1,
 							$row->lastPurchase,
