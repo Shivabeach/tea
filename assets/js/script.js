@@ -32,11 +32,16 @@ $(function() {
   });
 });
 
-$(function () {
+$(function() {
   "use strict";
-  $('td.teaname').on('click', function () { //click on the li
-    var content = $(this).text();//content is the text that you clicked on
- //PLACE THE TEXT INSIDE THE INPUT FIELD, YOU CAN CHANGE YOUR SELECTOR TO TARGET THE RIGHT INPUT
+  $('td.teaname').on('click', function() { //click on the li
+    var content = $(this).text(); //content is the text that you clicked on
+    //PLACE THE TEXT INSIDE THE INPUT FIELD, YOU CAN CHANGE YOUR SELECTOR TO TARGET THE RIGHT INPUT
     $('input[id="teaname"]').val(content);
   });
 });
+
+$(function() {
+    $("#datepicker").datepicker;
+  })
+  //@prepros-append spec.js

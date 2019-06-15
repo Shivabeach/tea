@@ -5,9 +5,13 @@
 
   <div class="container-left">
     <div class="container-inner">
+      <div class="container-inner flex height1 center fs-4">
+        <div id="demo12"></div>
+      </div>
       <div class="fs-5">Tea Links</div>
       <?php include 'menu.html';?>
     </div>
+    
   </div>
   <div class="container-main">
     <div class="container-inner">

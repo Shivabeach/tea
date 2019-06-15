@@ -416,11 +416,22 @@ dt {
 th {
   border-bottom: 1px dotted #443B3C; }
 
+.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .left-aligned {
   text-align: left; }
 
 .text-small {
   font-size: 0.95rem; }
+
+.height1 {
+  height: 6rem; }
 
 .card1 {
   -webkit-box-flex: 1;
@@ -466,7 +477,7 @@ th {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   background-color: #202B36;
   color: #C67713; }
@@ -491,6 +502,11 @@ th {
   border-right-width: 2px;
   border-right-style: solid;
   border-bottom: #4B3621 2px solid; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 header {
   width: 100%;
@@ -636,5 +652,45 @@ main {
 
 .bold-10 {
   font-weight: 1000; }
+
+.calendar {
+  background: #CFC79E;
+  padding: 1em;
+  border: 2px solid #000;
+  width: 100%; }
+
+.day {
+  padding: 2px;
+  height: 10em;
+  vertical-align: top;
+  width: calc(100% / 7); }
+
+.highlight {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Geneva", "Verdana", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #050533;
+  background: #FE5532; }
+
+.day_num {
+  color: #00007F;
+  vertical-align: top;
+  font-family: "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", monospace; }
+
+.content {
+  color: #211E9C; }
+
+th {
+  text-align: center; }
+
+.coloring {
+  background: tint(#050533, 40%); }
+
+.size {
+  color: #000;
+  text-align: center; }
+
+.thheader {
+  color: #050533; }
 
 /*# sourceMappingURL=main.css.map */
