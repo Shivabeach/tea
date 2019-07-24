@@ -26,6 +26,7 @@ $(function() {
       data: data,
       success: function(response) {
         $('#display').html(response).delay(4000).fadeOut(1000);
+        location.reload();
       }
     });
     return false;
