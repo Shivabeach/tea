@@ -28,4 +28,12 @@ $map1: (small: 10%, med: 30%, med-lg: 50%, large: 75%, full: 100%)
 
   @return $target / $vw-context * 1vw
 
+@function size($num)
+	@return #{$num / 2}vw
+@for $i from 1 through 10
+	.fs-#{$i}
+		font-size: size($i)
 
+// @function head($heading)
+//   $heading = 1rem
+//   return $heading * 1.618

@@ -12,7 +12,7 @@ class Mycal extends CI_Controller {
     }
     $this->load->model('mycal_model');
     if ($day = $this->input->post('day')) {
-        $this->mycal_model->add_calendar_data("$year-$month-$day", $this->input->post('data')
+        $this->mycal_model->add_calendar_data("$year-$month-$day", htmlspecialchars_decode($this->input->post('data'))
         );
     }
     $data['title'] = 'Tea & Fermentation Calendar';

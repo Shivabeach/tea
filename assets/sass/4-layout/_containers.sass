@@ -2,19 +2,32 @@
 
 .container
   display: flex
-  width: 85%
+  width: 100% 
   margin: 0 auto
 
   +set-background($back)
 
 .container-left
   width: 300px
+  +tablet
+    width: 100%
+  +mobile
+    width: 100%
+
 
 .container-main
   flex: 2.5 1
+  +tablet
+    width: 100%
+  +mobile
+    width: 100%
 
 .container-right
   flex: 1 1
+  +tablet
+    width: 100%
+  +mobile
+    width: 100%
 
 .container-inner
   margin: 1rem

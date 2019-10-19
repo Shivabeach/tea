@@ -28,6 +28,7 @@
       <fieldset>
         <legend>Ferment Record</legend>
           <?php
+          foreach($number AS $row):
             $open = [
               "id" => "ajax"
             ];
@@ -37,7 +38,7 @@
               "id" => "numb",
               "name" => "numb",
               "class" => "input-small",
-              "placeholder" => "Jar Number"
+              "placeholder" => "Jar Num"
             ];
             echo form_input($numb);
 
@@ -93,6 +94,7 @@
             echo "<button type='submit' id='submit' value='Submit'>Submit</button>";
             echo "<button type='reset' value='reset'>Reset</button>";
             echo form_close();
+          endforeach;
           ?>
       </fieldset>
     </div>
@@ -105,6 +107,16 @@
       <div class="main-title fs-5">Sample Teas</div>
       <div id="display"></div>
     </div>
+    <div class="container-inner">
+      <ol>
+        <li>Determine product weight</li>
+        <li> Determine water weight</li>
+        <li>The 2 above can be weighed together</li>
+        <li>Multiply water and product weight in grams x .03</li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>  
   </div>
 
 </div>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lora");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -341,7 +342,8 @@ a:visited {
   text-decoration-color: red; }
 
 a:hover {
-  color: #C17C56; }
+  -webkit-filter: brightness(260%) hue-rotate(-20deg);
+  filter: brightness(260%) hue-rotate(-20deg); }
 
 .input-small {
   width: 10%; }
@@ -383,6 +385,72 @@ a:hover {
   border-color: #ffc078;
   border-style: solid; }
 
+.fs-1 {
+  font-size: 0.5vw; }
+
+.fs-2 {
+  font-size: 1vw; }
+
+.fs-3 {
+  font-size: 1.5vw; }
+
+.fs-4 {
+  font-size: 2vw; }
+
+.fs-5 {
+  font-size: 2.5vw; }
+
+.fs-6 {
+  font-size: 3vw; }
+
+.fs-7 {
+  font-size: 3.5vw; }
+
+.fs-8 {
+  font-size: 4vw; }
+
+.fs-9 {
+  font-size: 4.5vw; }
+
+.fs-10 {
+  font-size: 5vw; }
+
+/* typography */
+h1,
+h2 {
+  letter-spacing: 2px; }
+
+strong {
+  letter-spacing: 2px;
+  font-weight: 600; }
+
+code {
+  font-family: "Courier New", "Courier", "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-weight: 300;
+  font-size: 1.4vw; }
+
+h1 {
+  font-size: 3.6vw;
+  counter-reset: subsection; }
+
+h2 {
+  font-size: 2.6vw;
+  font-family: 'Lora', serif; }
+
+h3 {
+  font-size: 2vw;
+  font-family: 'Lora', serif; }
+
+h4 {
+  font-size: 1.6vw;
+  font-family: 'Lora', serif; }
+
+h5 {
+  font-size: 1.3vw; }
+
+h6 {
+  font-size: 1.07vw; }
+
 .shopping-menu {
   margin: 0;
   padding: 0; }
@@ -408,7 +476,8 @@ dt {
   font-size: 1.2rem; }
 
 .tea_show {
-  width: 100%; }
+  width: 95%;
+  margin: 0 auto; }
 
 .cent {
   text-align: center; }
@@ -477,23 +546,41 @@ th {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   background-color: #202B36;
   color: #C67713; }
 
 .container-left {
   width: 300px; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container-left {
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .container-left {
+      width: 100%; } }
 
 .container-main {
   -webkit-box-flex: 2.5;
   -ms-flex: 2.5 1;
   flex: 2.5 1; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container-main {
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .container-main {
+      width: 100%; } }
 
 .container-right {
   -webkit-box-flex: 1;
   -ms-flex: 1 1;
   flex: 1 1; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container-right {
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .container-right {
+      width: 100%; } }
 
 .container-inner {
   margin: 1rem;
@@ -524,7 +611,7 @@ header {
   align-items: center; }
 
 .top {
-  text-shadow: 1px 1px 2px #803e27; }
+  text-shadow: 3px 2px 2px #ffcc33; }
 
 footer {
   -webkit-box-flex: 1;
@@ -539,6 +626,12 @@ footer {
   flex-wrap: wrap;
   background-color: #504251;
   color: #C67713; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    footer {
+      width: 100%; } }
+  @media screen and (max-width: 767px) {
+    footer {
+      width: 100%; } }
 
 main {
   width: 100%;
@@ -548,110 +641,6 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-
-/* input sizes */
-.input-small {
-  width: 10%; }
-
-.input-med {
-  width: 30%; }
-
-.input-med-lg {
-  width: 50%; }
-
-.input-large {
-  width: 75%; }
-
-.input-full {
-  width: 100%; }
-
-/* Border styles */
-.br-1 {
-  border: 1px;
-  border-color: #ffc078;
-  border-style: solid; }
-
-.br-2 {
-  border: 2px;
-  border-color: #ffc078;
-  border-style: solid; }
-
-.br-3 {
-  border: 3px;
-  border-color: #ffc078;
-  border-style: solid; }
-
-.br-4 {
-  border: 4px;
-  border-color: #ffc078;
-  border-style: solid; }
-
-.br-5 {
-  border: 5px;
-  border-color: #ffc078;
-  border-style: solid; }
-
-/* Font sizes */
-.fs-1 {
-  font-size: 0.5vw; }
-
-.fs-2 {
-  font-size: 1vw; }
-
-.fs-3 {
-  font-size: 1.5vw; }
-
-.fs-4 {
-  font-size: 2vw; }
-
-.fs-5 {
-  font-size: 2.5vw; }
-
-.fs-6 {
-  font-size: 3vw; }
-
-.fs-7 {
-  font-size: 3.5vw; }
-
-.fs-8 {
-  font-size: 4vw; }
-
-.fs-9 {
-  font-size: 4.5vw; }
-
-.fs-10 {
-  font-size: 5vw; }
-
-/* Font weight mixin */
-.bold-1 {
-  font-weight: 100; }
-
-.bold-2 {
-  font-weight: 200; }
-
-.bold-3 {
-  font-weight: 300; }
-
-.bold-4 {
-  font-weight: 400; }
-
-.bold-5 {
-  font-weight: 500; }
-
-.bold-6 {
-  font-weight: 600; }
-
-.bold-7 {
-  font-weight: 700; }
-
-.bold-8 {
-  font-weight: 800; }
-
-.bold-9 {
-  font-weight: 900; }
-
-.bold-10 {
-  font-weight: 1000; }
 
 .calendar {
   background: #CFC79E;

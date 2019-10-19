@@ -21,13 +21,14 @@
 
 		<section>
 			<?php
-				$this->table->set_heading('Jar #', 'Start', 'Peppers', 'Salt', 'Mixture', 'Success', 'Days', 'PH');
+				$this->table->set_heading('Jar #', 'Start', 'Peppers', 'Contents', 'Good', 'Days', 'PH');
 				foreach ($display as $row) {
 					$peppers = ['data' => $row->peppers, 'class' => 'peppers'];
 					$mix = ['data' => $row->mix, 'class' => 'left-aligned text-small'];
+          $start = nice_date($row->start, "F d Y");
 					$this->table->add_row (
 						$row->numb,
-						$row->start,
+						$start,
 						$peppers,
 						$mix,
 						$row->success,
@@ -51,6 +52,9 @@
       include "update.php";
 
       ?>
+    </div>
+    <div class="container-inner">
+      
     </div>
   </div>
 

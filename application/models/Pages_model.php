@@ -81,6 +81,13 @@ class Pages_model extends CI_Model {
 		return $q->result();
 	}
 
+	public function cost()
+	{
+		$this->db->select_sum("cost");
+		$query = $this->db->get("tea");
+		return $query->result();
+	}
+
 }
 
 /* End of file Pages_model.php */

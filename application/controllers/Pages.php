@@ -26,6 +26,10 @@ class Pages extends CI_Controller {
 	 if($query = $this->pages_model->get_sample()) {
 			$data['sample'] = $query;
 		}
+		if($query = $this->pages_model->cost()) {
+			$data['cost'] = $query;
+		}
+
 		$tmpl = array('table_open' =>
 
 		'<table cellpadding="5" cellspacing="5" class="tea_show">', 'row_start' =>
@@ -33,7 +37,7 @@ class Pages extends CI_Controller {
 		'<tr class="cent">', 'row_alt_start' => '<tr class="cent">', 'table_close' => '</table>');
 
 		$this->table->set_template($tmpl);
-		$data['top'] = "tea page";
+		$data['top'] = "tea and fermentation";
 		$data['title'] = "Tea Page 1";
 		$data['main_content'] = "pages/prime";
 		$this->load->view("template/template", $data);
@@ -111,6 +115,3 @@ class Pages extends CI_Controller {
 } //end
 
 /* End of file pages.php */
-
-
-

@@ -118,7 +118,7 @@ class Forms extends CI_Controller {
   {
     $data = [
       'date' => $this->input->post('date'),
-      'data' => html_escape($this->input->post('data'))
+      'data' => $this->input->post('data')
     ];
 
     $this->form_validation->set_rules('date', 'Date', 'required');

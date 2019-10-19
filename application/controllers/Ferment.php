@@ -21,6 +21,10 @@ class Ferment extends CI_Controller {
 
 	public function form()
 	{
+		$query = $this->db->query("SELECT MAX(`numb`) FROM `ferment` ");
+		if($query->result()) {
+			$data['number'] = $query->result();
+		}
 		$data['top'] = "Entry Form";
 		$data['title'] = "Data Input";
 		$data['main_content'] = "ferment/ferment_input";
