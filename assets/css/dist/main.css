@@ -451,6 +451,15 @@ h5 {
 h6 {
   font-size: 1.07vw; }
 
+/*forms*/
+button[type='submit'],
+button[type='reset'] {
+  border-radius: 4px;
+  background-color: #ffcc99;
+  color: #212121;
+  margin: 0 5px;
+  padding: 0 5px; }
+
 .shopping-menu {
   margin: 0;
   padding: 0; }

@@ -11,14 +11,14 @@
       <div class="fs-5">Tea Links</div>
 			<?php include "application/views/pages/menu.html";?>
     </div>
-		
+
 
   </div>
   <div class="container-main">
     <div class="container-inner">
       <p class="inner-center-text">
 				This is my record of fermentations of hot peppers to make sauces with.
-			</p>      
+			</p>
     </div>
     <div class="container-inner">
       <p class="inner-center-text">
@@ -75,22 +75,6 @@
             ];
             echo form_textarea($mix);
 
-            $success = [
-              "id" => "success",
-              "name" => "success",
-              "class" => "input-med",
-              "placeholder" => "Successful?"
-            ];
-            echo form_input($success);
-
-            $days = [
-              "id" => "days",
-              "name" => "days",
-              "class" => "input-small",
-              "placeholder" => "Days"
-            ];
-            echo form_input($days);
-
             echo "<button type='submit' id='submit' value='Submit'>Submit</button>";
             echo "<button type='reset' value='reset'>Reset</button>";
             echo form_close();
@@ -100,7 +84,7 @@
     </div>
 
 
-		
+
   </div>
   <div class="container-right">
     <div class="container-inner">
@@ -116,7 +100,7 @@
         <li></li>
         <li></li>
       </ol>
-    </div>  
+    </div>
   </div>
 
 </div>

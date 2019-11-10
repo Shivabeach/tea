@@ -11,7 +11,7 @@
       <div class="fs-5">Tea Links</div>
       <?php include 'menu.html';?>
     </div>
-    
+
   </div>
   <div class="container-main">
     <div class="container-inner">
@@ -23,13 +23,14 @@
       <section class="tea-display">
 
         <?php
-					$this->table->set_heading('Last Bought', 'orderedQty', 'total', 'Rating');
+					$this->table->set_heading('Last Bought', 'orderedQty', 'total', 'Rating', 'Cost');
 					foreach($mingle as $row){
 						$this->table->add_row(
 							$row->lastPurchase,
 							$row->orderedQty,
 							$row->total,
-							$row->rating
+							$row->rating,
+              $row->cost
 						);
 					}
 					echo $this->table->generate();

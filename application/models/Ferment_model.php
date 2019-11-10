@@ -7,9 +7,9 @@ class Ferment_model extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
-		
+
 	}
-		// start, peppers(weight), salt(used), mix(what peppers), success, days(length) 
+		// start, peppers(weight), salt(used), mix(what peppers), success, days(length)
 	public function get_ferment ()
 	{
 		$config = [
@@ -19,7 +19,7 @@ class Ferment_model extends CI_Model {
 		];
 		$this->table->set_template($config);
 		$this->db->select('numb, start, peppers, mix, success, days, ph');
-		$this->db->order_by("start", "desc");
+		$this->db->order_by("numb", "desc");
 		$query = $this->db->get('ferment');
 		return $query->result();
 	}
@@ -36,6 +36,29 @@ class Ferment_model extends CI_Model {
 		$this->db->select('date, note, recording');
 		$this->db->order_by('date', 'desc');
 		$query = $this->db->get('notes');
+		return $query->result();
+	}
+ 
+	public function ave()
+	{
+		$this->db->select_avg("days");
+		$this->db->where("days >", 1);
+		$query = $this->db->get("ferment");
+		return $query->result();
+	}
+
+	public function acidity()
+	{
+		$this->db->select_avg("ph");
+		$this->db->where("ph >", 1);
+		$query = $this->db->get("ferment");
+		return $query->result();
+	}
+	public function sums()
+	{
+		$this->db->select_sum("peppers");
+		$this->db->where("success", "Yes");
+		$query = $this->db->get("ferment");
 		return $query->result();
 	}
 

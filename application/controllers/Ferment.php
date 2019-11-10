@@ -45,12 +45,26 @@ class Ferment extends CI_Controller {
 
 	public function peppers()
 	 {
-	 	
+		if($query = $this->ferment_model->ave())
+ 		{
+ 			$data['average1'] = $query;
+ 		}
+		if($query = $this->ferment_model->acidity())
+ 		{
+ 			$data['acid'] = $query;
+ 		}
+		if($query = $this->ferment_model->sums())
+		{
+			$data['sums1'] = $query;
+		}
+		//end Peppers
+		//start teas
+		
 	 	$data['top'] = "2019 pepper history";
 		$data['title'] = "2019 pepper notes";
 		$data['main_content'] = "ferment/peppers";
 		$this->load->view('template/template', $data);
-	 } 
+	 }
 
 }
 

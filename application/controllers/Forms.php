@@ -48,16 +48,13 @@ class Forms extends CI_Controller {
 			"start"   => $this->input->post("start"),
 			"peppers" => $this->input->post("peppers"),
 			"salt"    => $this->input->post("salt"),
-			"mix"     => $this->input->post("mix"),
-			"success" => $this->input->post("success"),
-			"days"    => $this->input->post("days")
+			"mix"     => $this->input->post("mix")
 		];
 
 		$this->form_validation->set_rules('start', 'startdate', 'required');
 		$this->form_validation->set_rules('peppers', 'peppers', 'required');
 		$this->form_validation->set_rules('salt', 'salt', 'required');
 		$this->form_validation->set_rules('mix', 'mix', 'required');
-		$this->form_validation->set_rules('days', 'days', 'numeric');
 		if( $this->form_validation->run() == FALSE) {
 			echo validation_errors();
 		}else {

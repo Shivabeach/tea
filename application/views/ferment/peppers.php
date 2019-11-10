@@ -21,7 +21,15 @@
 
 		<section>
       <h4>2019 Peppers</h4>
-      
+      <?php foreach($average1 as $row):?>
+      <p>The average number of days a ferment has gone is <?php echo round($row->days, 2);?> or <?php echo round($row->days/7, 2);?> weeks </p>
+    <?php endforeach;?>
+    <?php foreach($acid as $row):?>
+      <p>The average ph of the ferments is <?php echo round($row->ph, 2);?> </p>
+    <?php endforeach;?>
+    <?php foreach($sums1 as $row): ?>
+      <p>We have processed <?php echo $row->peppers;?> grams of peppers, or <?=$row->peppers * 0.035274;?> ounces</p>
+    <?php endforeach;?>
 			<!-- display  -->
 
 		</section>

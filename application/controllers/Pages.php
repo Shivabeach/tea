@@ -73,7 +73,7 @@ class Pages extends CI_Controller {
 
 
 		$inputs = $this->input->post("single");
-		$this->db->select('rating, lastPurchase, orderedQty, total');
+		$this->db->select('rating, lastPurchase, orderedQty, total, cost');
 		$this->db->where('teaName', $inputs);
 		$q = $this->db->get('tea');
 		if($q->result())

@@ -11,7 +11,7 @@
       <div class="fs-5">Tea Links</div>
       <?php include 'menu.html';?>
     </div>
-    
+
   </div>
   <div class="container-main">
     <div class="container-inner">
@@ -105,7 +105,6 @@
                   echo "<button type='submit' id='submit' value='Submit'>submit</button>";
                   echo "<button type='reset' value='reset'>Reset</button>";
                     ?>
-
         </fieldset>
 
       </section>
