@@ -26,7 +26,11 @@
 			?>
 		</div>
       <div class="fs-5">Tea Links</div>
-			<?php include 'menu.html';?>
+			<?php
+      include "config.php";
+      if(in_array("menu.html",$includes)){
+        include 'menu.html';
+      } ?>
     </div>
 
   </div>

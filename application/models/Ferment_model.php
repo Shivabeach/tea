@@ -38,11 +38,12 @@ class Ferment_model extends CI_Model {
 		$query = $this->db->get('notes');
 		return $query->result();
 	}
- 
+
 	public function ave()
 	{
 		$this->db->select_avg("days");
 		$this->db->where("days >", 1);
+		$this->db->where("success", "yes");
 		$query = $this->db->get("ferment");
 		return $query->result();
 	}
@@ -51,6 +52,7 @@ class Ferment_model extends CI_Model {
 	{
 		$this->db->select_avg("ph");
 		$this->db->where("ph >", 1);
+		$this->db->where("success", "yes");
 		$query = $this->db->get("ferment");
 		return $query->result();
 	}

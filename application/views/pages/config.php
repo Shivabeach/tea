@@ -2,6 +2,6 @@
 <?php
 $includes = [
 	"update.php",
-	"views/pages/menu.html",
+	"menu.html",
 	"inc_notes.php"
 ];

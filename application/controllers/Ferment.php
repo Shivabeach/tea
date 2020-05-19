@@ -14,7 +14,7 @@ class Ferment extends CI_Controller {
 			$data['display'] = $query;
 		}
 		$data['title'] = "Fermentation Record";
-		$data['top'] = "Fermentations";
+		$data['top'] = "Fermentations for 2019";
 		$data['main_content'] = "ferment/prime";
 		$this->load->view("template/template", $data);
 	}
@@ -59,7 +59,7 @@ class Ferment extends CI_Controller {
 		}
 		//end Peppers
 		//start teas
-		
+
 	 	$data['top'] = "2019 pepper history";
 		$data['title'] = "2019 pepper notes";
 		$data['main_content'] = "ferment/peppers";
