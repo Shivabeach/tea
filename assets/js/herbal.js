@@ -5,12 +5,20 @@
  */
 const remove = document.querySelector('.delete');
 const herb = document.getElementById("herbal");
+let listing = document.querySelector(".listing");
+let zeroOut;
 let herbs;
 let storedData = localStorage.getItem("herbs");
 if (storedData !== null) {
   herbs = JSON.parse(storedData);
 } else {
   herbs = [];
+}
+
+function zero() {
+  let zeroOut = document.getElementById('needs');
+  zeroOut.value = "";
+  return;
 }
 
 function herbal() {
@@ -24,25 +32,29 @@ function storeNeeds(needs) {
   localStorage.setItem('herbs', JSON.stringify(herbs));
 }
 //kinda works
+function lister() {
+  const herby = getItems();
+  listing.innerHTML = "There are " + herby.length + " Items needed";
+}
 function display() {
   const herbs = getItems();
+  herbs.sort();
   herbs.forEach((herbs) => addToList(herbs));
-  //console.log(herbs);
-
 }
 //kinda works
 function addToList(herbs) {
   const list = document.querySelector('.disp');
   const li = document.createElement('li');
   li.classList.add('under');
-
   li.innerHTML = `
-    ${herbs}  - <span><a class="delete" href="#">X</a></span>`;
+    ${herbs} - <span><a class="delete" href="#">X</a></span>`;
     list.appendChild(li);
+    lister();
 }
 //getCosts()
 function getItems() {
   herbs = JSON.parse(localStorage.getItem('herbs'));
+  herbs.sort();
   return herbs;
 }
 
@@ -60,11 +72,12 @@ function removeNeed(e) {
     }
   });
   localStorage.setItem('herbs', JSON.stringify(herbs));
-  console.log(herbs);
+  lister();
 }
 
 addEventListener('DOMContentLoaded', () => {
   display();
+  lister();
 })
 // listens to  form submission then sends the value submitted to storeNeeds
 // function
@@ -73,6 +86,7 @@ herb.addEventListener("submit", (e) => {
   const needs = document.getElementById('needs').value;
   storeNeeds(needs);
   addToList(needs);
+  zero();
 })
 document.querySelector('.disp').addEventListener('click', (e) => {
   e.target;
