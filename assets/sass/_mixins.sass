@@ -1,6 +1,6 @@
 
 
-// for flex containers only 
+// for flex containers only
 =center($value, $value2)
 	justify-content: $value
 	align-items: $value2
@@ -37,10 +37,10 @@
 		margin-right: 0
 
 =grad-many($color1, $color2, $color3, $color4)
-  background: linear-gradient($color1, $color2, $color3, $color4)
+	background: linear-gradient($color1, $color2, $color3, $color4)
 
 =simple-gradient($angle, $color, $color1)
-  background: linear-gradient($angle, $color, $color1)
+	background: linear-gradient($angle, $color, $color1)
 
 @function set-text-color($color)
 	@if(lightness($color) > 50)
