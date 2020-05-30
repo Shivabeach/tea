@@ -6,7 +6,7 @@
 const remove = document.querySelector('.delete');
 const herb = document.getElementById("herbal");
 let listing = document.querySelector(".listing");
-let zeroOut;
+
 let herbs;
 let storedData = localStorage.getItem("herbs");
 if (storedData !== null) {
@@ -15,10 +15,9 @@ if (storedData !== null) {
   herbs = [];
 }
 
+
 function zero() {
-  let zeroOut = document.getElementById('needs');
-  zeroOut.value = "";
-  return;
+  document.getElementById('needs').value = "";
 }
 
 function herbal() {
@@ -38,7 +37,6 @@ function lister() {
 }
 function display() {
   const herbs = getItems();
-  herbs.sort();
   herbs.forEach((herbs) => addToList(herbs));
 }
 //kinda works
@@ -52,9 +50,8 @@ function addToList(herbs) {
     lister();
 }
 //getCosts()
-function getItems() {
+function getItems(herbs) {
   herbs = JSON.parse(localStorage.getItem('herbs'));
-  herbs.sort();
   return herbs;
 }
 
