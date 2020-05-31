@@ -14,7 +14,13 @@ if (storedData !== null) {
 } else {
   herbs = [];
 }
-
+function create() {
+  let choco = "chocolate";
+  if(storedData === null) {
+    herbs.push(choco);
+    localStorage.setItem('herbs', JSON.stringify(herbs));
+  }
+}
 
 function zero() {
   document.getElementById('needs').value = "";
@@ -26,7 +32,7 @@ function herbal() {
 }
 // works (addCosts)
 function storeNeeds(needs) {
-  const herbs = getItems();
+  //const herbs = getItems();
   herbs.push(needs);
   localStorage.setItem('herbs', JSON.stringify(herbs));
 }
@@ -36,7 +42,7 @@ function lister() {
   listing.innerHTML = "There are " + herby.length + " Items needed";
 }
 function display() {
-  const herbs = getItems();
+  //const herbs = getItems();
   herbs.forEach((herbs) => addToList(herbs));
 }
 //kinda works
@@ -50,7 +56,7 @@ function addToList(herbs) {
     lister();
 }
 //getCosts()
-function getItems(herbs) {
+function getItems() {
   herbs = JSON.parse(localStorage.getItem('herbs'));
   return herbs;
 }
@@ -62,10 +68,10 @@ function deleteNeed(el) {
 }
 
 function removeNeed(e) {
-  const del = getItems(herbs);
-  del.forEach((needs, index) => {
+  //const del = getItems(herbs);
+  herbs.forEach((needs, index) => {
     if(needs === needs) {
-      del.splice(index, 1);
+      herbs.splice(index, 1);
     }
   });
   localStorage.setItem('herbs', JSON.stringify(herbs));
@@ -73,6 +79,7 @@ function removeNeed(e) {
 }
 
 addEventListener('DOMContentLoaded', () => {
+  create();
   display();
   lister();
 })
