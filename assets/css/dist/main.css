@@ -389,6 +389,13 @@ a:hover {
   padding-bottom: 8px;
 }
 
+.mid-hr {
+  width: 75%;
+  text-align: center;
+  color: red;
+  padding: 2rem 0;
+}
+
 .input-small {
   width: 10%;
 }

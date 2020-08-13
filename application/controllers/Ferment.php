@@ -21,7 +21,7 @@ class Ferment extends CI_Controller {
 
 	public function form()
 	{
-		$query = $this->db->query("SELECT MAX(`numb`) FROM `ferment` ");
+		$query = $this->db->query("SELECT MAX(`numb`) as Max FROM `ferment` ");
 		if($query->result()) {
 			$data['number'] = $query->result();
 		}

@@ -32,7 +32,7 @@ $(function() {
     return false;
   });
 });
-
+ 
 $(function() {
   "use strict";
   $('td.teaname').on('click', function() { //click on the li

@@ -28,7 +28,6 @@
       <fieldset>
         <legend>Ferment Record</legend>
           <?php
-          foreach($number AS $row):
             $open = [
               "id" => "ajax"
             ];
@@ -38,8 +37,9 @@
               "id" => "numb",
               "name" => "numb",
               "class" => "input-small",
-              "placeholder" => "Jar Num"
+              "placeholder" => "Jar Num",
             ];
+
             echo form_input($numb);
 
 
@@ -78,8 +78,33 @@
             echo "<button type='submit' id='submit' value='Submit'>Submit</button>";
             echo "<button type='reset' value='reset'>Reset</button>";
             echo form_close();
-          endforeach;
+
           ?>
+      </fieldset>
+      <hr class="mid-hr">
+      <!-- form for salt -->
+      <fieldset>
+        <legend>Salt Calculation</legend>
+          <?php
+            $formid = [
+            "id" => "salted"
+          ];
+            echo form_open("", $formid);
+            ?>
+          <p>Pepper Weight</p>
+          <?php
+          $weight = [
+            "id" => "weight",
+            "class" => "input-med",
+            "name" => "weight"
+          ];
+          echo form_input($weight);?>  Grams of peppers
+          <?php
+          echo "<button type='submit' id='submited' value='Submit'>Submit</button>";
+          echo form_close();
+          ?>
+          <p>Solution required</p>
+          <p id="answer"></p>
       </fieldset>
     </div>
 
@@ -114,5 +139,5 @@
       <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?>
     </p>
   </div>
-
+<script src="<?php echo base_url('assets/js/spec.min.js');?>" defer></script>
 </footer>

@@ -6,14 +6,14 @@
 const remove = document.querySelector('.delete');
 const herb = document.getElementById("herbal");
 let listing = document.querySelector(".listing");
-
+let needs;
 let herbs;
 let storedData = localStorage.getItem("herbs");
-if (storedData !== null) {
-  herbs = JSON.parse(storedData);
-} else {
-  herbs = [];
-}
+// if (storedData !== null) {
+//   herbs = JSON.parse(storedData);
+// } else {
+//   herbs = [];
+// }
 function create() {
   let choco = "chocolate";
   if(storedData === null) {
@@ -32,7 +32,7 @@ function herbal() {
 }
 // works (addCosts)
 function storeNeeds(needs) {
-  //const herbs = getItems();
+  const herbs = getItems();
   herbs.push(needs);
   localStorage.setItem('herbs', JSON.stringify(herbs));
 }
@@ -42,7 +42,8 @@ function lister() {
   listing.innerHTML = "There are " + herby.length + " Items needed";
 }
 function display() {
-  //const herbs = getItems();
+  const herbs = getItems();
+  herbs.sort();
   herbs.forEach((herbs) => addToList(herbs));
 }
 //kinda works
@@ -50,14 +51,20 @@ function addToList(herbs) {
   const list = document.querySelector('.disp');
   const li = document.createElement('li');
   li.classList.add('under');
+  console.log(herbs);
   li.innerHTML = `
-    ${herbs} - <span><a class="delete" href="#">X</a></span>`;
+    ${herbs} - <span class="dele"><a class="delete" href="#">X</a></span>`;
     list.appendChild(li);
     lister();
 }
 //getCosts()
 function getItems() {
-  herbs = JSON.parse(localStorage.getItem('herbs'));
+  let herbs;
+  if(localStorage.getItem('herbs') === null) {
+    herbs = [];
+  }else {
+    herbs = JSON.parse(localStorage.getItem('herbs'));
+  }
   return herbs;
 }
 
@@ -67,10 +74,10 @@ function deleteNeed(el) {
 	}
 }
 
-function removeNeed(e) {
-  //const del = getItems(herbs);
-  herbs.forEach((needs, index) => {
-    if(needs === needs) {
+function removeNeed(target) {
+  const herbs = getItems();
+  herbs.forEach((target, index) => {
+    if(target === target) {
       herbs.splice(index, 1);
     }
   });
@@ -87,13 +94,14 @@ addEventListener('DOMContentLoaded', () => {
 // function
 herb.addEventListener("submit", (e) => {
   e.preventDefault();
-  const needs = document.getElementById('needs').value;
+  needs = document.getElementById('needs').value;
   storeNeeds(needs);
   addToList(needs);
   zero();
 })
 document.querySelector('.disp').addEventListener('click', (e) => {
-  e.target;
-  deleteNeed(e.target);
-  removeNeed(e.target.parentElement.parentElement.textContent);
+  console.log(e.target);
+  let target = e.target;
+  deleteNeed(target);
+  removeNeed(target.parentElement.textContent);
 })
