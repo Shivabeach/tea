@@ -14,7 +14,7 @@ function myTimer() {
 
 salted.addEventListener('click', e => {
 	e.preventDefault();
-	let heavy = document.getElementById('weight').value;
+	const heavy = document.getElementById('weight').value;
 	const salt = heavy * 0.03;
-	answer.innerHTML = salt + ' Grams of Salt';
+	answer.innerHTML = Math.round(salt) + ' Grams of Salt';
 });

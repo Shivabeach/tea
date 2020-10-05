@@ -103,8 +103,8 @@
           echo "<button type='submit' id='submited' value='Submit'>Submit</button>";
           echo form_close();
           ?>
-          <p>Solution required</p>
-          <p id="answer"></p>
+          <p>Solution required: <span id="answer"></span></p>
+
       </fieldset>
     </div>
 
