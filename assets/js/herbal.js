@@ -70,8 +70,8 @@ function getItems() {
 
 function deleteNeed(el) {
   if (el.classList.contains('delete')) {
-			el.parentElement.parentElement.remove();
-	}
+      el.parentElement.parentElement.remove();
+  }
 }
 
 function removeNeed(target) {
